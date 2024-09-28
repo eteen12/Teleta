@@ -13,9 +13,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Teleta Development",
+  title: "Custom Website Design Kelowna | Teleta Development",
   description:
-    "Teleta Development offers affordable custom web development and design for Kelowna businesses. Specializing in responsive, SEO-friendly websites.",
+    "Website design and development services for Kelowna businesses. Affordable, custom, responsive, and SEO-friendly websites.",
   keywords:
     "web development, web design, Kelowna, British Columbia, Canada, responsive, SEO, affordable, custom, small business",
   author: "Teleta Development",
@@ -26,7 +26,7 @@ export const metadata = {
     description:
       "Teleta Development offers affordable custom web development and design for Kelowna businesses, specializing in responsive, SEO-friendly websites.",
     url: "https://www.TeletaDevelopment.com",
-    image: "https://imgur.com/a/8kkwlBm.jpg", // Replace with an image URL for social media
+    image: "https://www.TeletaDevelopment.com/teletaLogoShare.jpg",
     type: "website",
   },
   twitter: {
@@ -34,26 +34,27 @@ export const metadata = {
     title: "Teleta Development",
     description:
       "Teleta Development offers affordable custom web development and design for Kelowna businesses, specializing in responsive, SEO-friendly websites.",
-    image: "https://imgur.com/a/8kkwlBm.jpg", // Replace with an image URL for Twitter
+    image: "https://www.TeletaDevelopment.com/teletaLogoShare.jpg",
   },
   schema: {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Teleta Development",
-    "url": "https://www.TeletaDevelopment.com",
-    "description": "Affordable custom web development and design for Kelowna businesses.",
-    "image": "https://imgur.com/a/8kkwlBm.jpg",
-    "sameAs": [
+    name: "Teleta Development",
+    url: "https://www.TeletaDevelopment.com",
+    description:
+      "Affordable custom web development and design for Kelowna businesses.",
+    image: "https://www.TeletaDevelopment.com/teletaLogoShare.jpg",
+    sameAs: [
       "https://www.facebook.com/TeletaDevelopment",
       "https://www.instagram.com/teleta_development/",
-      "https://www.linkedin.com/company/teleta-development"
+      "https://www.linkedin.com/company/teleta-development",
     ],
-    "potentialAction": {
+    potentialAction: {
       "@type": "SearchAction",
-      "target": "https://www.TeletaDevelopment.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
+      target: "https://www.TeletaDevelopment.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
