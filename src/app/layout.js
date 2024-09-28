@@ -2,6 +2,8 @@ import { League_Spartan, Montserrat } from "next/font/google";
 import React from "react";
 import "./globals.css";
 
+import NavBarServer from "../components/server/navbarS.jsx";
+
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   variable: "--font-league-spartan",
@@ -66,9 +68,11 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head></head>
       <body
         className={`${leagueSpartan.variable} ${montserrat.variable} antialiased`}
       >
+        <NavBarServer />
         {children}
       </body>
     </html>
