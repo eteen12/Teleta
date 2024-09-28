@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 :root {
+  --font-league-spartan: 'League Spartan', sans-serif;
   --background: #ffffff;
   --foreground: #171717;
 }
-
+.league-spartan {
+  font-family: var(--font-league-spartan);
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
