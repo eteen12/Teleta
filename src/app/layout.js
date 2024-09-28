@@ -1,15 +1,16 @@
-import { LeagueSpartan, Montserrat } from "next/font/google";
+import { League_Spartan, Montserrat } from "next/font/google";
+import React from "react";
 import "./globals.css";
 
-const leagueSpartan = LeagueSpartan({
+const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   variable: "--font-league-spartan",
-  weight: 400,
+  weight: "400",
 });
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: 400,
+  weight: "400",
 });
 
 export const metadata = {
@@ -19,7 +20,6 @@ export const metadata = {
   keywords:
     "web development, web design, Kelowna, British Columbia, Canada, responsive, SEO, affordable, custom, small business",
   author: "Teleta Development",
-  viewport: "width=device-width, initial-scale=1",
   charset: "UTF-8",
   og: {
     title: "Teleta Development",
@@ -57,6 +57,12 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+// eslint-disable-next-line react/prop-types
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
