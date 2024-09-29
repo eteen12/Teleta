@@ -4,9 +4,16 @@
 
 :root {
   --font-league-spartan: "League Spartan", sans-serif;
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ffffff;
 }
 .league-spartan {
   font-family: var(--font-league-spartan);
+  font-weight: 800;
+}
+/* Styling for navBarServer*/
+@media (min-width: 1024px) { 
+  .mdNavBarHeight {
+    height: 80px; 
+  }
 }

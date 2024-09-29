@@ -2,12 +2,12 @@ import { League_Spartan, Montserrat } from "next/font/google";
 import React from "react";
 import "./globals.css";
 
-import NavBarServer from "../components/server/navbarS.jsx";
+import NavBarServer from "../components/server/navBarServer.jsx";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   variable: "--font-league-spartan",
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 const montserrat = Montserrat({
   subsets: ["latin"],
