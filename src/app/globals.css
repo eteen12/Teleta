@@ -2,18 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --font-league-spartan: "League Spartan", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
   --background: #171717;
   --foreground: #ffffff;
 }
 .league-spartan {
   font-family: var(--font-league-spartan);
-  font-weight: 800;
+  font-weight: var(--font-weight);
 }
+.montserrat {
+  font-family: var(--font-montserrat);
+  font-weight: var(--font-weight);
+}
+.teletaGreen {
+  color: #84cc16;
+}
+.teletaYellow {
+  color: #fde047;
+}
+.teletaYellowBg {
+  background-color: #fde047;
+}
+.stacked-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .stacked-grid {
+    grid-template-rows: 60% 40%;
+    grid-template-columns: 1fr;
+    height: 100vh;
+  }
+}
+
+/* Optional: Center content in grid items */
+.stacked-grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Styling for navBarServer*/
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
   .mdNavBarHeight {
-    height: 80px; 
+    height: 80px;
   }
 }

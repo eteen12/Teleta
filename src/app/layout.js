@@ -13,7 +13,7 @@ const leagueSpartan = League_Spartan({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
         <link rel="icon" href="/teletaLogo.ico" type="image/x-icon" />
         <meta name="description" content={metadata.description} />
