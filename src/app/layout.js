@@ -89,9 +89,10 @@ export default function RootLayout({ children }) {
         />
         <meta name="twitter:image" content={metadata.twitter.image} />
         {/* Add Schema.org markup for Google+ */}
-        <script type="application/ld+json">
-          {JSON.stringify(metadata.schema)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(metadata.schema) }}
+        />
       </head>
       <body
         className={`${leagueSpartan.variable} ${montserrat.variable} antialiased`}
