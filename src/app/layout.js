@@ -3,6 +3,7 @@ import React from "react";
 import "./globals.css";
 
 import NavBarServer from "../components/server/navBarServer.jsx";
+import Footer from "@/components/server/footer";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Custom Website Design Kelowna | Teleta Development",
+  title: "Teleta Development | Custom Website Design Kelowna",
   description:
     "Website design and development services for Kelowna businesses. Affordable, custom, responsive, and SEO-friendly websites.",
   keywords:
@@ -68,12 +69,36 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <title>{metadata.title}</title>
+        <link rel="icon" href="/teletaLogo.ico" type="image/x-icon" />
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        {/* Add Open Graph and Twitter meta tags */}
+        <meta property="og:title" content={metadata.og.title} />
+        <meta property="og:description" content={metadata.og.description} />
+        <meta property="og:url" content={metadata.og.url} />
+        <meta property="og:image" content={metadata.og.image} />
+        <meta name="twitter:card" content={metadata.twitter.card} />
+        <meta name="twitter:title" content={metadata.twitter.title} />
+        <meta
+          name="twitter:description"
+          content={metadata.twitter.description}
+        />
+        <meta name="twitter:image" content={metadata.twitter.image} />
+        {/* Add Schema.org markup for Google+ */}
+        <script type="application/ld+json">
+          {JSON.stringify(metadata.schema)}
+        </script>
+      </head>
       <body
         className={`${leagueSpartan.variable} ${montserrat.variable} antialiased`}
       >
         <NavBarServer />
         {children}
+        <Footer />
       </body>
     </html>
   );
