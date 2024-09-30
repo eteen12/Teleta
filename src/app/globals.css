@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  overflow-x:hidden ;
+}
 :root {
   --font-league-spartan: "League Spartan", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;

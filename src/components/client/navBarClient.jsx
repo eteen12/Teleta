@@ -2,16 +2,16 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useNavScroll } from "../../hooks/navScroll.js";
+import { navHandler } from "../../hooks/navHandler.js";
 import "/src/app/globals.css";
 
 export default function NavBarServer() {
-  const scroll = useNavScroll();
+  const { scrollingDown, shadow, background } = navHandler();
   return (
     <nav
-      className={`flex justify-between items-center fixed w-full h-16 z-50 transition-all duration-500 ${
-        scroll ? "bg-black" : "bg-transparent"
-      }`}
+      className={`flex justify-between items-center fixed w-full h-16 z-50 transition-all duration-700 ${
+        scrollingDown ? "-translate-y-full" : "translate-y-0"
+      }`}style={{ background, boxShadow: shadow }}
     >
       <Link href="/">
         <div className="relative w-40 h-40 right-4 md:w-48 md:h-48 md:right-6 lg:w-60 lg:h-60 lg:right-7 xl:w-72 xl:h-72 xl:right-12 flex ">
