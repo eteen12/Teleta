@@ -1,13 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import "/src/app/globals.css";
 
 import TeletaWorkSpace from "/public/teletaWorkSpace.jpg";
 
 export default function Form() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userData = { name, email, message };
+
+    try {
+      const response = await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const newUser = await response.json();
+      setSuccess("User added successfully");
+      setError(null);
+    } catch (error) {
+      setError("Failed to add user");
+      setSuccess(null);
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <div className="w-full min-h-full bg-white flex justify-center py-10">
-      <form className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56">
+      <form
+        className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56"
+        onSubmit={handleSubmit}
+      >
         <div className="grid sm:grid-cols-[65%_35%] ">
           <div className="bg-black p-6 rounded-3xl sm:rounded-tr-none sm:rounded-br-none md:h-[52vh] md:px-12">
             <div className="flex justify-center mb-2">
@@ -30,6 +68,8 @@ export default function Form() {
               placeholder="Enter your name"
               className="border border-gray-300 p-2 px-5 w-full rounded-full"
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
 
             <label
@@ -44,6 +84,8 @@ export default function Form() {
               placeholder="Enter your email"
               className="border border-gray-300 p-2 px-5 w-full rounded-full"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <div className="relative">
@@ -59,9 +101,11 @@ export default function Form() {
                 className="border border-gray-300 px-4 p-2 w-full rounded-3xl resize-none pr-20 montserrat"
                 rows="4"
                 placeholder="Enter your notes here (max 300 characters)"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
               <button
-                type="button"
+                type="submit"
                 className="absolute bottom-1.5 right-0 h-10 px-4 text-sm montserrat text-black teletaYellowBg rounded-3xl rounded-tr-none rounded-bl-none"
                 style={{ "--font-weight": "700" }}
               >
@@ -83,6 +127,8 @@ export default function Form() {
             </div>
           </div>
         </div>
+        {success && <p className="text-green-500">{success}</p>}
+        {error && <p className="text-red-500">{error}</p>}
       </form>
     </div>
   );
