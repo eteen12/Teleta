@@ -13,14 +13,15 @@ export function navHandler() {
         setScrollingDown(false);
         setLastScrollTop(currentScroll);
         setBackground("transparent");
+        return;
       }
 
       setScrollingDown(currentScroll > lastScrollTop);
       setLastScrollTop(currentScroll);
 
-      if (currentScroll > 0) {
+      if (currentScroll > 10) {
         setBackground("black");
-        setShadow("0px 2px 4px rgba(0, 0, 0, 0.5)");
+        setShadow("0px 2px 4px rgba(0, 0, 0, 0.8)");
       } else {
         setBackground("transparent");
         setShadow("none");
