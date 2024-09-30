@@ -4,7 +4,7 @@ import Form from "@/components/sections/form";
 
 export default function Home() {
   return (
-    <div className=" ">
+    <div>
       <Hero />
       <Form />
     </div>
