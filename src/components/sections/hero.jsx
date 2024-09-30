@@ -12,14 +12,14 @@ export default function Hero() {
         style={{ "--font-weight": "600" }}
       >
         <div>
-          <h1 className="text-6xl league-spartan mx-auto text-center  md:text-7xl lg:text-8xl xl:text-9xl">
+          <h1 className="text-6xl league-spartan mx-auto text-center  md:text-7xl lg:text-8xl">
             <span className="teletaGreen">Website,</span> <br />
             <span className="teletaYellow">Design,</span> <br />
             <span className="text-white">Kelowna.</span>
           </h1>
         </div>
         {/*The input */}
-        <div className="relative top-5 sm:px-2 ">
+        <div className="relative top-5 w-64 md:w-72 lg:w-96">
           <HeroSubscribe />
           <p className="relative top-2 teletaGreen text-center text-xs">
             by clicking subscribe you agree to the terms of service

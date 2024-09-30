@@ -74,3 +74,6 @@ body {
   width: 100%;
   transition: width 1s ease;
 }
+.custom-hover-effect:hover{
+  color:#84cc16;
+}

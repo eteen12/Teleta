@@ -6,13 +6,13 @@ import TeletaWorkSpace from "/public/teletaWorkSpace.jpg";
 
 export default function Form() {
   return (
-    <div className="w-full min-h-full bg-white flex justify-center pt-10">
-      <form className="bg-b w-full p-3">
-        <div className="grid sm:grid-cols-[65%_35%]">
-          <div className="bg-black p-6 rounded-3xl sm:rounded-tr-none sm:rounded-br-none">
+    <div className="w-full min-h-full bg-white flex justify-center py-10">
+      <form className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56">
+        <div className="grid sm:grid-cols-[65%_35%] ">
+          <div className="bg-black p-6 rounded-3xl sm:rounded-tr-none sm:rounded-br-none md:h-[52vh] md:px-12">
             <div className="flex justify-center mb-2">
               <h2
-                className="text-white text-5xl league-spartan"
+                className="text-white text-5xl lg:text-6xl league-spartan"
                 style={{ "--font-weight": "600" }}
               >
                 Coming Soon.
@@ -76,7 +76,7 @@ export default function Form() {
                 src={TeletaWorkSpace}
                 alt="Teleta Development Office"
                 className="object-cover rounded-tr-3xl rounded-br-3xl"
-                unoptimized= {true}//This saved my ass!!!!!!!!!!!!!!!!!!!!
+                unoptimized={true} //This saved my ass!!!!!!!!!!!!!!!!!!!!
                 loading="lazy"
                 fill
               />
