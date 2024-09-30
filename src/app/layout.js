@@ -2,7 +2,7 @@ import { League_Spartan, Montserrat } from "next/font/google";
 import React from "react";
 import "./globals.css";
 
-import NavBarServer from "@/components/client/navBarClient";
+import NavBarClient from "@/components/client/navBarClient";
 import Footer from "@/components/server/footer";
 
 const leagueSpartan = League_Spartan({
@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${leagueSpartan.variable} ${montserrat.variable} antialiased`}
       >
-        <NavBarServer />
+        <NavBarClient />
         {children}
         <Footer />
       </body>
