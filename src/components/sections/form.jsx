@@ -17,7 +17,7 @@ export default function Form() {
     const userData = { name, email, message };
 
     try {
-      const response = await fetch("/api/users", {
+      const response = await fetch("/api/users/form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

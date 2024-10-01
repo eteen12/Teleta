@@ -1,13 +1,46 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "/src/app/globals.css";
 
 export default function SubscribeForm() {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const subscriberData = { email };
+
+    try {
+      const response = await fetch("/api/users/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(subscriberData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const newSubscriber = await response.json();
+      setSuccess("Subscribed successfully");
+      setError(null);
+    } catch (error) {
+      setError("Failed to subscribe");
+      setSuccess(null);
+    }
+    setEmail("");
+  };
   return (
     <form
       id="subscribe-form"
       name="subscribe"
       aria-label="Email Subscription Form"
       className="relative w-full bg-transparent rounded-full shadow-lg "
+      onSubmit={handleSubmit}
     >
       <div>
         <input
@@ -20,7 +53,8 @@ export default function SubscribeForm() {
           className="w-full h-10 pl-4 text-sm font-bold border-0 rounded-full text-black montserrat focus:outline-none focus:ring-2 focus:ring-green-600 pr-24 lg:pr-36"
           style={{ "--font-weight": "600" }}
           aria-label="Email Address"
-    
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <button
           type="submit"

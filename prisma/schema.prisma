@@ -20,3 +20,9 @@ model storeUser{
   message String
   createdAt DateTime @default(now())
 }
+
+model storeSubscriber{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String @unique
+  createdAt DateTime @default(now())
+}
