@@ -6,6 +6,7 @@ export default function SubscribeForm() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [isActive, setIsActive] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,8 +32,11 @@ export default function SubscribeForm() {
     } catch (error) {
       setError("Failed to subscribe");
       setSuccess(null);
+     
     }
     setEmail("");
+    setIsActive(true);
+    setTimeout(() => setIsActive(false), 2000);
   };
   return (
     <form
@@ -58,7 +62,9 @@ export default function SubscribeForm() {
         />
         <button
           type="submit"
-          className="absolute right-0 top-0 h-full text-sm montserrat text-black teletaYellowBg rounded-full rounded-bl-none custom-transition hover:rounded-full "
+          className={`absolute right-0 top-0 h-full text-sm montserrat text-black teletaYellowBg rounded-full rounded-bl-none custom-transition hover:rounded-full ${
+            isActive ? "w-full" : "w-auto"
+          }`}
           style={{ "--font-weight": "700" }}
         >
           Subscribe
