@@ -24,9 +24,16 @@ export async function POST(request) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
+    if (error.code === "P2002") {
+      return new Response(JSON.stringify({ error: "Email already exists" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     return new Response(JSON.stringify(error), {
       status: 500,
-      headers: { "Contnent-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
     });
   }
 }
