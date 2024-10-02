@@ -23,7 +23,7 @@ export default function NavBarServer() {
         <ul>
           <li className="pr-5">
             <Link
-              href="#contact-form"
+              href="/#contact-form"
               aria-label="Open contact form for Teleta Development"
             >
               <button
