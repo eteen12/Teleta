@@ -26,19 +26,25 @@ export default function Form() {
       });
 
       if (!response.ok) {
-        throw new Error("Something went wrong");
+        const errorResponse = await response.json(); 
+        throw new Error(errorResponse.error || "Something went wrong");
       }
 
       const newUser = await response.json();
-      setSuccess("User added successfully");
-      setError(null);
+      setSuccess(`Hey ${newUser.name}, ill get back to you soon.`);
+      setError("");
     } catch (error) {
-      setError("Failed to add user");
-      setSuccess(null);
+      setError(`Failed to send message: ${error.message}`);
+      setSuccess("");
     }
     setName("");
     setEmail("");
     setMessage("");
+
+    setTimeout(() => {
+      setSuccess(null);
+      setError(null);
+    }, 3000);
   };
   return (
     <div className="w-full min-h-full bg-white flex justify-center py-10">
@@ -113,6 +119,8 @@ export default function Form() {
                 Submit
               </button>
             </div>
+            {success && <p className="teletaGreen pl-3">{success}</p>}
+            {error && <p className="text-red-500">{error}</p>}
           </div>
 
           <div className="hidden sm:block rounded-tr-3xl rounded-br-3xl h-full w-full">
@@ -128,8 +136,6 @@ export default function Form() {
             </div>
           </div>
         </div>
-        {success && <p className="text-green-500">{success}</p>}
-        {error && <p className="text-red-500">{error}</p>}
       </form>
     </div>
   );

@@ -3,6 +3,13 @@ import prisma from "@/lib/prismaClient";
 export async function POST(request) {
   const { name, email, message } = await request.json();
 
+  if (!name || !email || !message) {
+    return new Response(JSON.stringify({ error: "All fields are required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
   try {
     const newUser = await prisma.storeUser.create({
       data: {
@@ -31,4 +38,4 @@ export async function GET() {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
-}   
+}
