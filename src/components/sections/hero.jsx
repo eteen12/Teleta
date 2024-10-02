@@ -25,14 +25,14 @@ export default function Hero() {
         <div className="relative top-5 w-64 md:w-72 lg:w-96">
           <HeroSubscribe />
           <p className="relative top-2 teletaGreen text-center text-xs">
-      By clicking subscribe, you agree to my{" "}
-      <Link href="/policies">
-        <span className="text-white hover:underline cursor-pointer">
-          terms and policies
-        </span>
-      </Link>
-      .
-    </p>
+            By clicking subscribe, you agree to my{" "}
+            <Link href="/policies">
+              <span className="text-white hover:underline">
+                terms and policies
+              </span>
+            </Link>
+            .
+          </p>
         </div>
       </div>
 

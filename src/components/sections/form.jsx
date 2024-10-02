@@ -73,7 +73,7 @@ export default function Form() {
               type="text"
               id="name"
               placeholder="Enter your name"
-              className="border border-gray-300 p-2 px-5 w-full rounded-full"
+              className="border border-gray-300 p-2 px-5 w-full rounded-full montserrat"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -89,7 +89,7 @@ export default function Form() {
               type="text"
               id="email"
               placeholder="Enter your email"
-              className="border border-gray-300 p-2 px-5 w-full rounded-full"
+              className="border border-gray-300 p-2 px-5 w-full rounded-full montserrat"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}

@@ -23,22 +23,26 @@ export default function SubscribeForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Something went wrong");
+        const errorResponse = await response.json(); 
+        throw new Error(errorResponse.error || "Something went wrong");
       }
 
       await response.json();
-      setSuccess("Subscribed successfully");
-      setError(null);
+      setSuccess("Thanks for subscribing!");
+      setError("");
       setIsActive(true);
     } catch (error) {
-      setError("Failed to subscribe");
-      setSuccess(null);
+      setError(`Failed to subscribe: ${error.message}`);
+      setSuccess("");
       setIsActive(false);
     }
     setEmail("");
+
     setTimeout(() => {
+      setSuccess(null);
+      setError(null);
       setIsActive(false);
-    }, 1000);
+    }, 3000);
   };
   return (
     <form
@@ -48,7 +52,7 @@ export default function SubscribeForm() {
       className="relative w-full bg-transparent rounded-full shadow-lg "
       onSubmit={handleSubmit}
     >
-      <div>
+      <div className="relative">
         <input
           type="email"
           id="email-spot"
@@ -65,12 +69,26 @@ export default function SubscribeForm() {
         <button
           type="submit"
           className={`absolute right-0 top-0 h-full text-sm montserrat text-black teletaYellowBg transition-all duration-700 ${
-            isActive ? "w-full rounded-full" : "w-[35%] rounded-full  rounded-bl-none"
+            isActive
+              ? "w-full rounded-full"
+              : "w-[35%] rounded-full  rounded-bl-none"
           }`}
           style={{ "--font-weight": "700" }}
         >
-          Subscribe
+          {isActive ? "Thanks!" : "Subscribe"}
         </button>
+      </div>
+      <div className="relative h-2">
+        {error && (
+          <p className="absolute inset-0 text-red-500 text-xs text-center">
+            {error}
+          </p>
+        )}
+        {success && (
+          <p className="absolute inset-0 teletaGreen text-xs text-center">
+            {success}
+          </p>
+        )}
       </div>
     </form>
   );
