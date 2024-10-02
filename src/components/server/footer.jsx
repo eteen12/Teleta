@@ -73,6 +73,15 @@ export default function Footer() {
               <li>
                 <a href="/pages/contact">Contact</a>
               </li>
+              <li>
+                <a
+                  href="https://www.freepik.com/free-psd/iphone-15-pro-mockup-front-back-view_222039926.htm#fromView=search&page=1&position=13&uuid=411eadca-55ee-449b-ac92-fcedf7fb73fd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Phone Image by originalmockup on Freepik
+                </a>
+              </li>
             </ul>
           </div>
         </div>

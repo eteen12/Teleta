@@ -1,6 +1,7 @@
 import React from "react";
 import "/src/app/globals.css";
 import Image from "next/image";
+import Link from "next/link";
 
 import Mockup from "/public/mockup.jpeg";
 
@@ -24,7 +25,13 @@ export default function Hero() {
         <div className="relative top-5 w-64 md:w-72 lg:w-96">
           <HeroSubscribe />
           <p className="relative top-2 teletaGreen text-center text-xs">
-            by clicking subscribe you agree to the terms of service
+            By clicking subscribe, you agree to my{" "}
+            <Link href="/terms-and-policies">
+              <p className="text-blue-500 hover:underline">
+                terms and policies
+              </p>
+            </Link>
+            .
           </p>
         </div>
       </div>
@@ -42,7 +49,6 @@ export default function Hero() {
         </div>
         <div className="bg-black w-full h-16"></div>
       </div>
-  
     </div>
   );
 }
