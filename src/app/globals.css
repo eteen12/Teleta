@@ -41,19 +41,20 @@ html {
     height: 100vh;
   }
 }
-/* Optional: Center content in grid items */
+/* Center content in grid items */
 .stacked-grid > div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Styling for navBarServer*/
+/* Styling for navBarClient*/
 @media (min-width: 1024px) {
   .mdNavBarHeight {
     height: 80px;
   }
 }
+
 /* Styling for hero*/
 @media (min-width: 900px) {
   .heroGrid {

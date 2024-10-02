@@ -2,10 +2,12 @@ import React from "react";
 import "/src/app/globals.css";
 import Image from "next/image";
 
+import Mockup from "/public/mockup.jpeg";
+
 import HeroSubscribe from "../client/heroSubscribe";
 export default function Hero() {
   return (
-    <div className="w-full min-h-screen grid stacked-grid sm:grid-cols-[45%_55%] md:grid-cols-[40%_60%] xl:grid-cols-[35%_75%]">
+    <div className="w-full min-h-screen grid stacked-grid sm:grid-cols-[45%_55%] md:grid-cols-[40%_60%] xl:grid-cols-[35%_75%] ">
       {/* First Column */}
       <div
         className="bg-black flex flex-col justify-center tracking-tight px-10 sm:px-5 "
@@ -28,17 +30,19 @@ export default function Hero() {
       </div>
 
       {/* Second Column */}
-      <div className="flex items-center justify-center h-full">
-        <div className="relative w-full h-full z-0">
+      <div className="flex flex-col items-center justify-center h-full w-full bg-white">
+        <div className="relative w-full h-full">
           <Image
-            src="/mockup.png"
+            src={Mockup}
             alt="Teleta Development logo linking to homepage"
-            className="object-cover"
+            className="object-contain z-0"
             priority
             fill
           />
         </div>
+        <div className="bg-black w-full h-16"></div>
       </div>
+  
     </div>
   );
 }
