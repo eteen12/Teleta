@@ -45,6 +45,7 @@ export default function Form() {
       <form
         className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56"
         onSubmit={handleSubmit}
+        id="contact-form"
       >
         <div className="grid sm:grid-cols-[65%_35%] ">
           <div className="bg-black p-6 rounded-3xl sm:rounded-tr-none sm:rounded-br-none md:h-[52vh] md:px-12">
