@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-  overflow-x:hidden ;
+html {
+  overflow-x: hidden;
 }
 :root {
   --font-league-spartan: "League Spartan", sans-serif;
@@ -62,14 +62,6 @@ html{
 }
 
 /* Styling for heroSubscribe*/
-.custom-transition {
-  transition: width 1s ease;
-  width: 35%;
-}
-.custom-transition:hover {
-  width: 100%;
-  transition: width 1s ease;
-}
 .custom-hover-effect:hover{
   color:#84cc16;
 }

@@ -26,17 +26,19 @@ export default function SubscribeForm() {
         throw new Error("Something went wrong");
       }
 
-      const newSubscriber = await response.json();
+      await response.json();
       setSuccess("Subscribed successfully");
       setError(null);
+      setIsActive(true);
     } catch (error) {
       setError("Failed to subscribe");
       setSuccess(null);
-     
+      setIsActive(false);
     }
     setEmail("");
-    setIsActive(true);
-    setTimeout(() => setIsActive(false), 2000);
+    setTimeout(() => {
+      setIsActive(false);
+    }, 1000);
   };
   return (
     <form
@@ -62,8 +64,8 @@ export default function SubscribeForm() {
         />
         <button
           type="submit"
-          className={`absolute right-0 top-0 h-full text-sm montserrat text-black teletaYellowBg rounded-full rounded-bl-none custom-transition hover:rounded-full ${
-            isActive ? "w-full" : "w-auto"
+          className={`absolute right-0 top-0 h-full text-sm montserrat text-black teletaYellowBg transition-all duration-700 ${
+            isActive ? "w-full rounded-full" : "w-[35%] rounded-full  rounded-bl-none"
           }`}
           style={{ "--font-weight": "700" }}
         >
