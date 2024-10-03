@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /api/
+
+# Allow crawling of the entire site except /api/
+Allow: /
+
+Sitemap: https://teletadevelopment.com/sitemap.xml
