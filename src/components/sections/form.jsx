@@ -18,7 +18,7 @@ export default function Form() {
     const userData = { name, email, message };
 
     try {
-      const response = await fetch("/api/users/form", {
+      const response = await fetch("/api/user-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,16 +27,16 @@ export default function Form() {
       });
 
       if (!response.ok) {
-        const errorResponse = await response.json(); 
+        const errorResponse = await response.json();
         throw new Error(errorResponse.error || "Something went wrong");
       }
 
       const newUser = await response.json();
       setSuccess(`Hey ${newUser.name}, ill get back to you soon.`);
-      setError("");
+      setError(null);
     } catch (error) {
       setError(`Failed to send message: ${error.message}`);
-      setSuccess("");
+      setSuccess(null);
     }
     setName("");
     setEmail("");
@@ -53,9 +53,8 @@ export default function Form() {
         className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56"
         onSubmit={handleSubmit}
         id="contact-form"
-         role="form"
+        role="form"
       >
-        
         <div className="grid sm:grid-cols-[65%_35%] ">
           <div className="bg-black p-6 rounded-3xl sm:rounded-tr-none sm:rounded-br-none md:h-[52vh] md:px-12">
             <div className="flex justify-center mb-2">

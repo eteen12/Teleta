@@ -15,7 +15,7 @@ export default function SubscribeForm() {
     const subscriberData = { email };
 
     try {
-      const response = await fetch("/api/users/newsletter", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
