@@ -32,25 +32,11 @@ export async function POST(request) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    if (error.code === "P2002") {
-      return new Response(JSON.stringify({ error: "Email already exists" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
-    }
+    console.error("Error creating user:", error);
 
-    return new Response(JSON.stringify(error), {
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });
   }
-}
-
-export async function GET() {
-  const users = await prisma.storeUser.findMany();
-
-  return new Response(JSON.stringify(users), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
 }
