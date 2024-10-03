@@ -1,8 +1,9 @@
 import React from "react";
+import "/src/app/globals.css";
 
 export default function Page() {
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
+    <div className="p-8 bg-gray-300 min-h-screen">
       <h1 className="text-4xl font-bold mb-6 mt-10 flex justify-center">
         Policies
       </h1>
@@ -119,8 +120,8 @@ export default function Page() {
           Thanks For Checking Out the Site!
         </h2>
         <p>
-          I&apos;ve spent hundreds of hours building towards this moment. I hope
-          you consider employing me for your next project.
+          I&apos;ve spent hundreds of hours building, and soon the full site
+          will be up and running. I&apos;m excited to share it with you!
         </p>
       </section>
     </div>

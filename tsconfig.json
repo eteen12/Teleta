@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/emails/page.jsx", "src/components/email-template.tsx"  ],
   "exclude": [
     "node_modules"
   ]

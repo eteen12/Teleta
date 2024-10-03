@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
         className={`${leagueSpartan.variable} ${montserrat.variable} antialiased`}
       >
         <NavBarClient />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

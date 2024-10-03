@@ -7,10 +7,11 @@ export default function SubscribeForm() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [isActive, setIsActive] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const subscriberData = { email };
 
     try {
@@ -23,7 +24,7 @@ export default function SubscribeForm() {
       });
 
       if (!response.ok) {
-        const errorResponse = await response.json(); 
+        const errorResponse = await response.json();
         throw new Error(errorResponse.error || "Something went wrong");
       }
 
@@ -37,6 +38,7 @@ export default function SubscribeForm() {
       setIsActive(false);
     }
     setEmail("");
+    setLoading(false);
 
     setTimeout(() => {
       setSuccess(null);
@@ -68,6 +70,7 @@ export default function SubscribeForm() {
         />
         <button
           type="submit"
+          disabled={loading}
           className={`absolute right-0 top-0 h-full text-sm montserrat text-black teletaYellowBg transition-all duration-700 ${
             isActive
               ? "w-full rounded-full"
@@ -78,7 +81,7 @@ export default function SubscribeForm() {
           {isActive ? "Thanks!" : "Subscribe"}
         </button>
       </div>
-      <div className="relative h-2">
+      <div className="relative h-2" aria-live="polite">
         {error && (
           <p className="absolute inset-0 text-red-500 text-xs text-center">
             {error}

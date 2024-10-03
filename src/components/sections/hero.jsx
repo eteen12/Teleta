@@ -1,9 +1,10 @@
 import React from "react";
-import "/src/app/globals.css";
 import Image from "next/image";
 import Link from "next/link";
 
 import Mockup from "/public/mockup.jpeg";
+
+import "/src/app/globals.css";
 
 import HeroSubscribe from "../client/heroSubscribe";
 export default function Hero() {

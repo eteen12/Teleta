@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-export function navHandler() {
+
+export function useNavHandler() {
   const [scrollingDown, setScrollingDown] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [background, setBackground] = useState("transparent");
@@ -9,6 +10,8 @@ export function navHandler() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
+
+   
       if (currentScroll <= 0) {
         setScrollingDown(false);
         setLastScrollTop(currentScroll);
@@ -27,6 +30,7 @@ export function navHandler() {
         setShadow("none");
       }
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -34,5 +38,6 @@ export function navHandler() {
     };
   }, [lastScrollTop]);
 
+  // Return the state values
   return { scrollingDown, shadow, background };
 }

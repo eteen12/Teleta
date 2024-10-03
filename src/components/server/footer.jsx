@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* Menu Section */}
           <div className="">
-            <h4 className="text-lg font-semibold mb-4 teletaGreen">Menu</h4>
+            <h4 className="text-lg font-semibold mb-4 teletaYellow">Menu</h4>
             <ul className="space-y-2">
               <li>
                 <p>Coming soon.....</p>
@@ -62,16 +62,16 @@ export default function Footer() {
 
           {/* Support Section */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 teletaGreen">Support</h4>
+            <h4 className="text-lg font-semibold mb-4 teletaYellow">Support</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/pages/terms-conditions">Terms & Conditions</a>
+                <a href="/policies">Terms & Conditions</a>
               </li>
               <li>
-                <a href="/pages/privacy-policy">Privacy Policy</a>
+                <a href="/policies">Privacy Policy</a>
               </li>
               <li>
-                <a href="/pages/contact">Contact</a>
+                <a href="/#contact-form">Contact</a>
               </li>
               <li>
                 <a

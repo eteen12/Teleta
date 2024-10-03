@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Hero from "@/components/sections/hero";
 import Form from "@/components/sections/form";

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import "/src/app/globals.css";
@@ -52,19 +53,22 @@ export default function Form() {
         className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56"
         onSubmit={handleSubmit}
         id="contact-form"
+         role="form"
       >
+        
         <div className="grid sm:grid-cols-[65%_35%] ">
           <div className="bg-black p-6 rounded-3xl sm:rounded-tr-none sm:rounded-br-none md:h-[52vh] md:px-12">
             <div className="flex justify-center mb-2">
               <h2
                 className="text-white text-5xl lg:text-6xl league-spartan"
                 style={{ "--font-weight": "600" }}
+                aria-label="Coming Soon"
               >
                 Coming Soon.
               </h2>
             </div>
             <label
-              className="block teletaGreen ml-5 text-lg league-spartan"
+              className="block text-white  ml-5 text-lg league-spartan"
               htmlFor="name"
             >
               Name
@@ -72,6 +76,7 @@ export default function Form() {
             <input
               type="text"
               id="name"
+              aria-describedby="nameError"
               placeholder="Enter your name"
               className="border border-gray-300 p-2 px-5 w-full rounded-full montserrat"
               required
@@ -80,14 +85,15 @@ export default function Form() {
             />
 
             <label
-              className="block teletaYellow ml-5 text-lg league-spartan"
+              className="block text-white  ml-5 text-lg league-spartan"
               htmlFor="email"
             >
               Email
             </label>
             <input
-              type="text"
+              type="email"
               id="email"
+              aria-describedby="emailError"
               placeholder="Enter your email"
               className="border border-gray-300 p-2 px-5 w-full rounded-full montserrat"
               required
@@ -107,6 +113,7 @@ export default function Form() {
                 maxLength="300"
                 className="border border-gray-300 px-4 p-2 w-full rounded-3xl resize-none pr-20 montserrat"
                 rows="4"
+                aria-describedby="messageDesc"
                 placeholder="Enter your notes here (max 300 characters)"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -124,7 +131,7 @@ export default function Form() {
           </div>
 
           <div className="hidden sm:block rounded-tr-3xl rounded-br-3xl h-full w-full">
-            <div className="relative top-0 right-0 w-full h-full">
+            <div className="relative dark-overlay w-full h-full">
               <Image
                 src={TeletaWorkSpace}
                 alt="Teleta Development Office"
