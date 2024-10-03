@@ -74,6 +74,7 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
         <link rel="icon" href="/teletaLogo.ico" type="image/x-icon" />
+        
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         {/* Add Open Graph and Twitter meta tags */}

@@ -13,16 +13,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model storeUser{
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
-  email String @unique
-  message String
+model storeUser {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String   @unique
+  message   String
   createdAt DateTime @default(now())
 }
 
-model storeSubscriber{
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  email String @unique
+model storeSubscriber {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
   createdAt DateTime @default(now())
 }
