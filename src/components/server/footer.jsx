@@ -28,6 +28,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-600"
+                aria-label="Visit Teleta Development on Facebook"
+                title="Teleta Development - Facebook Page"
               >
                 <FaFacebookF size={24} />
               </a>
@@ -36,6 +38,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-500"
+                aria-label="Visit Teleta Development on Instagram"
+                title="Teleta Development - Instagram Page"
               >
                 <FaInstagram size={24} />
               </a>
@@ -44,6 +48,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-700"
+                aria-label="Visit Teleta Development on Linkedin"
+                title="Teleta Development - Linkedin Page"
               >
                 <FaLinkedin size={24} />
               </a>
