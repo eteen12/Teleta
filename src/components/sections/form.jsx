@@ -48,7 +48,7 @@ export default function Form() {
     }, 3000);
   };
   return (
-    <div className="w-full min-h-full bg-white flex justify-center py-10">
+    <div className="w-full min-h-full bg-white flex justify-center pb-10 sm:py-10">
       <form
         className="bg-b w-full p-3 sm:px-10 md:px-16 lg:px-28 xl:px-32 2xl:px-56"
         onSubmit={handleSubmit}

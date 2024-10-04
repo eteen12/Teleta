@@ -48,7 +48,7 @@ export default function Hero() {
             fill
           />
         </div>
-        <div className="bg-black w-full h-16"></div>
+        <div className="hidden sm:flex bg-black w-full h-16"></div>
       </div>
     </div>
   );
