@@ -1,0 +1,15 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",  
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.teletadevelopment.com"
+                }
+            ],
+            "destination": "https://teletadevelopment.com/$1",
+            "permanent": true
+        }
+    ]
+}
