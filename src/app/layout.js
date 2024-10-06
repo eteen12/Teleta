@@ -1,7 +1,6 @@
 import { League_Spartan, Montserrat } from "next/font/google";
 import React from "react";
 import "./globals.css";
-import teletaLogo from "@/public/teletaLogo.ico";
 
 import NavBarClient from "@/components/client/navBarClient";
 import Footer from "@/components/server/footer";
@@ -74,8 +73,22 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
-        <link rel="icon" href="/teletaLogo.ico" type="image/x-icon" />
-        
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon/favicon-48x48.png"
+          sizes="48x48"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="Teleta." />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         {/* Add Open Graph and Twitter meta tags */}
