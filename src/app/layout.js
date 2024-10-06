@@ -1,6 +1,7 @@
 import { League_Spartan, Montserrat } from "next/font/google";
 import React from "react";
 import "./globals.css";
+import teletaLogo from "@/public/teletaLogo.ico";
 
 import NavBarClient from "@/components/client/navBarClient";
 import Footer from "@/components/server/footer";
