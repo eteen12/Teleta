@@ -9,7 +9,7 @@ import "/src/app/globals.css";
 import HeroSubscribe from "../client/heroSubscribe";
 export default function Hero() {
   return (
-    <div className="w-full min-h-screen grid stacked-grid sm:grid-cols-[45%_55%] md:grid-cols-[40%_60%] xl:grid-cols-[35%_75%] ">
+    <div className="w-full min-h-screen grid stacked-grid sm:grid-cols-[45%_55%] md:grid-cols-[40%_60%] xl:grid-cols-[35%_75%] pb-28 sm:pb-0">
       {/* First Column */}
       <div
         className="bg-black flex flex-col justify-center tracking-tight px-10 sm:px-5 "
@@ -38,17 +38,18 @@ export default function Hero() {
       </div>
 
       {/* Second Column */}
-      <div className="flex flex-col items-center justify-center h-full w-full bg-white">
-        <div className="relative w-full h-full">
+      <div className="flex flex-col items-center justify-center h-full w-full bg-white relative">
+        {/* Image Container */}
+        <div className="relative max-w-[200px] max-h-[200px] sm:max-h-[500px] sm:max-w-[350px] lg:max-h-[800px] lg:max-w-[500px]">
           <Image
             src={Mockup}
             alt="Teleta Development logo linking to homepage"
             className="object-contain z-0"
             priority
-            fill
           />
         </div>
-        <div className="hidden sm:flex bg-black w-full h-16"></div>
+        {/* Bottom Bar */}
+        <div className="hidden sm:flex bg-black w-full h-16 z-50 absolute bottom-0"></div>
       </div>
     </div>
   );
