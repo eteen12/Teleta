@@ -14,8 +14,8 @@ export const metadata = {
     title: 'Teleta Development',
     description:
       'Teleta Development offers affordable custom web development and design for Kelowna businesses, specializing in responsive, SEO-friendly websites.',
-    url: 'https://www.TeletaDevelopment.com',
-    image: 'https://www.TeletaDevelopment.com/teletaLogoShare.jpg',
+    url: 'https://TeletaDevelopment.com',
+    image: 'https://TeletaDevelopment.com/teletaLogo.png',
     type: 'website',
   },
   twitter: {
@@ -23,24 +23,26 @@ export const metadata = {
     title: 'Teleta Development',
     description:
       'Teleta Development offers affordable custom web development and design for Kelowna businesses, specializing in responsive, SEO-friendly websites.',
-    image: 'https://www.TeletaDevelopment.com/teletaLogoShare.jpg',
+    image: 'https://TeletaDevelopment.com/teletaLogo.png',
   },
   schema: {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Teleta Development',
-    url: 'https://www.TeletaDevelopment.com',
+    url: 'https://TeletaDevelopment.com',
     description:
       'Affordable custom web development and design for Kelowna businesses.',
-    image: 'https://www.TeletaDevelopment.com/teletaLogoShare.jpg',
+    image: 'https://TeletaDevelopment.com/teletaLogo.png',
     sameAs: [
       'https://www.facebook.com/TeletaDevelopment',
-      'https://www.instagram.com/teleta_development/',
+      'https://www.instagram.com/Teleta_Development/',
       'https://www.linkedin.com/company/teleta-development',
+      'https://www.youtube.com/@TeletaDevelopment',
+      'https://github.com/eteen12',
     ],
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://www.TeletaDevelopment.com/search?q={search_term_string}',
+      target: 'https://TeletaDevelopment.com/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   },
@@ -57,6 +59,7 @@ export default function Layout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
+        <meta property="og:image" content="https://TeletaDevelopment.com/teletaLogo.png" alt="Teleta Development Logo" />
         <title>{metadata.title}</title>
         <link
           rel="icon"
