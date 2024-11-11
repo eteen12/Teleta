@@ -1,35 +1,44 @@
 {
-  "name": "teleta",
+  "name": "tailwindui-studio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "./node_modules/.bin/next start",
-    "lint": "next lint"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
+  "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "@prisma/client": "^5.20.0",
-    "autoprefixer": "^10.4.20",
-    "lru-cache": "^11.0.1",
-    "next": "^14.2.14",
-    "postcss": "^8.4.47",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-icons": "^5.3.0",
-    "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.13"
+    "@leafac/rehype-shiki": "^2.2.1",
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "@next/mdx": "^14.0.4",
+    "acorn": "^8.10.0",
+    "acorn-jsx": "^5.3.2",
+    "autoprefixer": "^10.4.7",
+    "clsx": "^2.1.0",
+    "escape-string-regexp": "^5.0.0",
+    "fast-glob": "^3.2.12",
+    "framer-motion": "^10.15.2",
+    "next": "^14.0.4",
+    "next-sitemap": "^4.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recma-import-images": "0.0.3",
+    "remark-gfm": "^4.0.0",
+    "remark-rehype-wrap": "0.0.3",
+    "remark-unwrap-images": "^4.0.0",
+    "shiki": "^0.11.1",
+    "tailwindcss": "^3.4.1",
+    "unified-conditional": "0.0.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@types/node": "22.7.4",
-    "@types/react": "18.3.11",
-    "eslint": "^9.11.1",
-    "eslint-plugin-react": "^7.37.1",
-    "glob": "^11.0.0",
-    "globals": "^15.10.0",
-    "prisma": "^5.20.0",
-    "rimraf": "^6.0.1",
-    "typescript": "5.6.2"
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "sharp": "0.33.1"
   }
 }
